@@ -1,4 +1,29 @@
 # RapidPay
+First Steps - Configuration Database
+
+1-Configure your SQL Server Database with the file :appsettings.json 
+
+  "ConnectionStrings": {
+      "DefaultConnection": "Server=YOUR SERVER;Database=YOUR DATABASE;Trusted_Connection=True;"
+    },
+
+   After that you setup the database connection , you can add the tables with the following sentence in the Package Manager console
+  ![image](https://user-images.githubusercontent.com/56619750/175122014-8c4c6eb1-077c-4cfb-8429-fb06aa9e725c.png)
+
+   add-migration InitialCreate
+
+   when the console show "Build succeeded."
+
+   write now the following sentence :
+
+   update-database
+
+2-Now you can see that there is a new database created 
+
+![image](https://user-images.githubusercontent.com/56619750/175122423-602c4e92-e7c9-4e41-9d24-c755032149da.png)
+
+ 
+Documentation about API
 
 Is a system that allow to manage the credits card and payments with a specific fees per day
 Api documentation with Swagger
