@@ -59,6 +59,30 @@ namespace RapidPlay.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("GenerateRandomFee")]
+        public async Task<ActionResult<Fees>> Post()
+        {
+            try
+            {
+                Random random = new Random();
+                var feeRandom = new decimal(random.NextDouble());
+                var f =new Fees
+                {
+                    fee= feeRandom,
+                    FeeDate=DateTime.Today
+                    
+                };
+                _context.Add(f);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPut]
         public async Task<ActionResult<Fees>> Put(Fees fees)
         {

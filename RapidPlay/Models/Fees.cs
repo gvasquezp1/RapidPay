@@ -10,7 +10,7 @@ namespace RapidPlay.Models
     public class Fees
     {
         public int id { get; set; }
-        public int fee { get; set; }
-        public int MyProperty { get; set; }
+        public decimal fee { get; set; }
+        public DateTime FeeDate { get; set; }
     }
 }

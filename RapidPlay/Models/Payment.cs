@@ -10,11 +10,12 @@ namespace RapidPlay.Models
     {
         [Key]
         public int Id { get; set; }
-        public int credirCardId { get; set; }
+        public int creditCardId { get; set; }
         public int clientid { get; set; }
         public DateTime docdate { get; set; }
         public DateTime docduedate { get; set; }
-        public int fee { get; set; }
+        public decimal fee { get; set; }
+        public decimal DocTotal { get; set; }
         public bool locked { get; set; }
     }
 }

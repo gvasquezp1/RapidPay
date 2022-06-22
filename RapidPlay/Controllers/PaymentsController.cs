@@ -49,9 +49,12 @@ namespace RapidPlay.Controllers
         {
             try
             {
+                var fee = await _context.Fees.OrderByDescending(e => e.FeeDate).FirstOrDefaultAsync();
+                Payment.fee= (Payment.DocTotal * fee.fee / 100);
+                Payment.DocTotal = (Payment.DocTotal )+(Payment.DocTotal * fee.fee / 100);
                 _context.Add(Payment);
                 await _context.SaveChangesAsync();
-                return Ok();
+                return Ok(Payment);
             }
             catch (Exception ex)
             {
